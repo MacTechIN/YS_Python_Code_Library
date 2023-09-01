@@ -53,7 +53,7 @@ def insert(cur, id_ , subject, content, data):
 		print("insert ERROR !!!")	
 
 #%%
-selectAll(curr)
+selectAll(curr)$#
 insert(curr, 19, "십구구구", "십구의 내용", "20230931")
 print("="*50)
 selectAll(curr)
