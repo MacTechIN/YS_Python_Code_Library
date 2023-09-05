@@ -45,8 +45,7 @@ class MyWindow(QMainWindow):
 
         self.minute_cur = QDateTime.currentDateTime()   # current
         self.minute_pre = self.minute_cur.addSecs(-60)  # 1 minute ago
-        # Pandas시리즈 객체 생성 : 수신된 데이터를 판다스 객체로 보관
-		self.ticks = Series(dtype='float64') 
+        self.ticks = Series(dtype='float64')  # Pandas시리즈 객체 생성 : 수신된 데이터를 판다스 객체로 보관
 
         # window size
         self.setMinimumSize(800, 400)
@@ -109,8 +108,7 @@ class MyWindow(QMainWindow):
         dt = QDateTime.currentDateTime()
         self.statusBar().showMessage(dt.toString())
         self.ticks[dt] = cur_price #판다스의 시리즈에 시간대별 저장 
-        # check whether minute changed
-        #if dt.time().minute() != self.minute_cur.time().minute():
+        # check whether minute change        #if dt.time().minute() != self.minute_cur.time().minute():
 
 
         ts = dt.toMSecsSinceEpoch()
