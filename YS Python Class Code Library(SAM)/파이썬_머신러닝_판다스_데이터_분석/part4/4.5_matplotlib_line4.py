@@ -4,12 +4,17 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
+
+from matplotlib import rc 
+rc("font", family="AppleGothic")
+
+"""
 # matplotlib 한글 폰트 오류 문제 해결
 from matplotlib import font_manager, rc
 font_path = "./malgun.ttf"   #폰트파일의 위치
 font_name = font_manager.FontProperties(fname=font_path).get_name()
 rc('font', family=font_name)
-
+"""
 # Excel 데이터를 데이터프레임 변환 
 df = pd.read_excel('시도별 전출입 인구수.xlsx', engine= 'openpyxl', header=0)
 
@@ -27,7 +32,7 @@ df_seoul.set_index('전입지', inplace=True)
 sr_one = df_seoul.loc['경기도']
 
 # 스타일 서식 지정
-plt.style.use('ggplot') 
+plt.style.use('fivethirtyeight') 
 
 # 그림 사이즈 지정
 plt.figure(figsize=(14, 5))
@@ -36,11 +41,11 @@ plt.figure(figsize=(14, 5))
 plt.xticks(size=10, rotation='vertical')
 
 # x, y축 데이터를 plot 함수에 입력 
-plt.plot(sr_one.index, sr_one.values, marker='o', markersize=10)  # 마커 표시 추가
+plt.plot(sr_one.index, sr_one.values, marker='o', markersize=7)  # 마커 표시 추가
 
-plt.title('서울 -> 경기 인구 이동', size=30)  #차트 제목
-plt.xlabel('기간', size=20)                  #x축 이름
-plt.ylabel('이동 인구수', size=20)           #y축 이름
+plt.title('서울 -> 경기 인구 이동', size=28)  #차트 제목
+plt.xlabel('기간', size=18)                  #x축 이름
+plt.ylabel('이동 인구수', size=18)         #y축 이름
 
 plt.legend(labels=['서울 -> 경기'], loc='best', fontsize=15)   #범례 표시
 

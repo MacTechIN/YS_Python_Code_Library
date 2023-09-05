@@ -9,5 +9,15 @@ df = pd.read_csv('./auto-mpg.csv', header=None)
 df.columns = ['mpg','cylinders','displacement','horsepower','weight',
               'acceleration','model year','origin','name']
 
+#%%
+print(df[['weight','mpg']])
+
+#%%
+
+# 차량 중량과 연비의 관계 
 # 2개의 열을 선택하여 산점도 그리기
 df.plot(x='weight',y='mpg', kind='scatter')
+
+
+#%%
+df.plot(x='cylinders', y='mpg', kind='scatter')

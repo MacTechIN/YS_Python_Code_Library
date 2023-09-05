@@ -12,4 +12,4 @@ df_ns.columns = df_ns.columns.map(int) # 열 이름의 자료형을 정수형으
 tdf_ns = df_ns.T
 print(tdf_ns.head())
 print('\n')
-tdf_ns.plot(kind='bar')
+tdf_ns.plot(kind='bar') # Bar 그래프로 그려라.

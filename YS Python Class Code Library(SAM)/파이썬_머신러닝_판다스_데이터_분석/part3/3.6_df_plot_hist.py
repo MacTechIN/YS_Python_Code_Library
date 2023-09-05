@@ -8,6 +8,31 @@ df_ns = df.iloc[[0, 5], 3:]            # 남한, 북한 발전량 합계 데이�
 df_ns.index = ['South','North']        # 행 인덱스 변경
 df_ns.columns = df_ns.columns.map(int) # 열 이름의 자료형을 정수형으로 변경
 
+#%%
+
+print(df_ns.values)
+
+#%%
+df_ns.values = df_ns.values.map(int)
+print(df_ns.dtypes)
+
+#%%
 # 행, 열 전치하여 히스토그램 그리기
 tdf_ns = df_ns.T
+
+#자료형 변환 
+tdf_ns['South'] = tdf_ns['South'].astype(int)
+tdf_ns['North'] = tdf_ns['North'].astype(int)
+
+#%%
+tdf_ns.astype(int)
+
+'North'
 tdf_ns.plot(kind='hist')
+
+#%%
+
+
+
+
+

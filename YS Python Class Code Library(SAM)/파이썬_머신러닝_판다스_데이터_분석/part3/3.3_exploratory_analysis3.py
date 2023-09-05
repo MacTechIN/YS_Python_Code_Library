@@ -21,10 +21,48 @@ df.drop('name', axis=1, inplace=True)
 print(df.mean())
 # 전체 평균값 
 #%%
+print('count1 :', df.count()) #전체 데이터 행 기준으로 갯수 
+print(df[:].count()) # 전체 행에 대해서 갯수 
+print(df[:].mean()) #전체 행에 대해서 평균
+
+#%%
+#행의 범위에 대해서 갯수 
+# 즉  8건 
+print(df[10:12])
+print('count2 :', df[10:12].count())
+
+
+#%%
+
+print(df.iloc[:,:0]) #전체행에서 0번째 컬럼만 선택 함. 
+print(df.iloc[:,:1]) #전체행에서 0번째 컬럼만 선택 함. 
+
+#%%
+
+#전체 행에서 부터 0부터 8번째 까지의 칼럼 선택 
+print(df.iloc[:,:8])
+print(df.iloc[:,:8].mean().mean)
+
+
+#%%
+
+#행 10부터 14번까지 중에 1,2번째 행만 보여라 
+print(df[10:15][1:3])
+
+#%%
 
 for x in range(len(df.columns)-1):
-	cols = df.iloc[ :,x]
+	col = df.iloc[x]
+	print(col, ':' , df[col].mean())
+
 print('\n')
+
+#%%
+
+#평균값 : horsepower 칼럼을 제외하고 평균 
+
+print (df.iloc[:, 0:3].mean(), '\n' ,df.iloc[:, 4:7].mean())
+
 
 #%%
 

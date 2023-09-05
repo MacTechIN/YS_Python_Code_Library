@@ -25,7 +25,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_c39183920c3aefb8e72a740207cd4a62 {
+                #map_c79111b3362ed0b99ac3a48ee232d36c {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -39,14 +39,14 @@
 <body>
     
     
-            <div class="folium-map" id="map_c39183920c3aefb8e72a740207cd4a62" ></div>
+            <div class="folium-map" id="map_c79111b3362ed0b99ac3a48ee232d36c" ></div>
         
 </body>
 <script>
     
     
-            var map_c39183920c3aefb8e72a740207cd4a62 = L.map(
-                "map_c39183920c3aefb8e72a740207cd4a62",
+            var map_c79111b3362ed0b99ac3a48ee232d36c = L.map(
+                "map_c79111b3362ed0b99ac3a48ee232d36c",
                 {
                     center: [37.29171, 127.01241],
                     crs: L.CRS.EPSG3857,
@@ -60,10 +60,31 @@
 
         
     
-            var tile_layer_4fdc2b12092cec6f9864e4daeeed90b6 = L.tileLayer(
+            var tile_layer_61f5cdc6b57d59da7447681713a34709 = L.tileLayer(
                 "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
-            ).addTo(map_c39183920c3aefb8e72a740207cd4a62);
+            ).addTo(map_c79111b3362ed0b99ac3a48ee232d36c);
         
+    
+            var marker_62e6e1d26b19108dee94d75985a736e7 = L.marker(
+                [37.29171, 127.01241],
+                {}
+            ).addTo(map_c79111b3362ed0b99ac3a48ee232d36c);
+        
+    
+        var popup_4d2960a6c21133347da1a0b44c9510bf = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b8ac875d3d4e717f077abc3f87e3426b = $(`<div id="html_b8ac875d3d4e717f077abc3f87e3426b" style="width: 100.0%; height: 100.0%;">연세IT미래교육원</div>`)[0];
+                popup_4d2960a6c21133347da1a0b44c9510bf.setContent(html_b8ac875d3d4e717f077abc3f87e3426b);
+            
+        
+
+        marker_62e6e1d26b19108dee94d75985a736e7.bindPopup(popup_4d2960a6c21133347da1a0b44c9510bf)
+        ;
+
+        
+    
 </script>
 </html>
