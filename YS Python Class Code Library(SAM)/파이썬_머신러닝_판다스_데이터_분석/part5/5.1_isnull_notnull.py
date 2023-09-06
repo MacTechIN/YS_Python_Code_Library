@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 
+#Pre-processing : 사전
+#
+
 # 라이브러리 불러오기
 import seaborn as sns
 
@@ -10,6 +13,11 @@ df = sns.load_dataset('titanic')
 nan_deck = df['deck'].value_counts(dropna=False) 
 print(nan_deck)
 
+#%%
+print(df[:,2]) 
+
+#%%
+
 # isnull() 메서드로 누락 데이터 찾기
 print(df.head().isnull())
 
@@ -18,3 +26,4 @@ print(df.head().notnull())
 
 # isnull() 메서드로 누락 데이터 개수 구하기
 print(df.head().isnull().sum(axis=0))
+

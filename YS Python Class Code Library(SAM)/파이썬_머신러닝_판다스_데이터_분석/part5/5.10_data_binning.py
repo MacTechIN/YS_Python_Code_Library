@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
 
+#구간분할
+#
+
+
 # 라이브러리 불러오기
 import pandas as pd
 import numpy as np
@@ -13,13 +17,19 @@ df.columns = ['mpg','cylinders','displacement','horsepower','weight',
 
 # horsepower 열의 누락 데이터('?') 삭제하고 실수형으로 변환
 df['horsepower'].replace('?', np.nan, inplace=True)      # '?'을 np.nan으로 변경
-df.dropna(subset=['horsepower'], axis=0, inplace=True)   # 누락데이터 행을 삭제
-df['horsepower'] = df['horsepower'].astype('float')      # 문자열을 실수형으로 변환
+df.dropna(subset=['horsepower'], axis=0, inplace=True)   # 누락데이터(nan) 행을 삭제
 
+df['horsepower'] = df['horsepower'].astype('float')      # 문자열을 실수형으로 변환 
+
+#%%
 # np.histogram 함수로 3개의 bin으로 나누는 경계 값의 리스트 구하기
-count, bin_dividers = np.histogram(df['horsepower'], bins=3)
-print(bin_dividers) 
+# [ 46.         107.33333333 168.66666667 230.        ]
+# 46~ 107.3 , 107.3 ~ 168.6, 186.6 ~ 230  세구간이 나옴 
 
+count, bin_dividers = np.histogram(df['horsepower'], bins=3)
+print("count:", count)
+print(bin_dividers) 
+#%%
 # 3개의 bin에 이름 지정
 bin_names = ['저출력', '보통출력', '고출력']
 
@@ -31,3 +41,9 @@ df['hp_bin'] = pd.cut(x=df['horsepower'],     # 데이터 배열
 
 # horsepower 열, hp_bin 열의 첫 15행을 출력
 print(df[['horsepower', 'hp_bin']].head(15))
+
+
+#%%
+
+df["test"] = 0 
+print(df)

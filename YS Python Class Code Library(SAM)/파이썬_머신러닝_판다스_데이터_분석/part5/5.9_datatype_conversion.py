@@ -14,9 +14,16 @@ df.columns = ['mpg','cylinders','displacement','horsepower','weight',
 print(df.dtypes)   
 print('\n')
 
+#%%
+print(df['horsepower'].value_counts())
+
+#%%
 # horsepower 열의 고유값 확인
 print(df['horsepower'].unique())
 print('\n')
+
+#%%
+
 
 # 누락 데이터('?') 삭제 
 import numpy as np
@@ -28,16 +35,38 @@ df['horsepower'] = df['horsepower'].astype('float')      # 문자열을 실수�
 print(df['horsepower'].dtypes)  
 print('\n')
 
+#%%
+
 # origin 열의 고유값 확인
+
 print(df['origin'].unique())
 
+#%%
+
+origin_index = df['origin'].value_counts().index
+
+origin_values = origin_index.values 
+origin_series = pd.Series(origin_values)
+
+print(origin_series.values)
+
+#%%
+
+print( pd.Series(df['origin'].value_count().index).values)
+
+#%%
 # 정수형 데이터를 문자형 데이터로 변환 
 df['origin'].replace({1:'USA', 2:'EU', 3:'JAPAN'}, inplace=True)
+
+#%%
 
 # origin 열의 고유값과 자료형 확인
 print(df['origin'].unique())
 print(df['origin'].dtypes) 
 print('\n')
+
+
+#%%
 
 # origin 열의 문자열 자료형을 범주형으로 변환
 df['origin'] = df['origin'].astype('category')     

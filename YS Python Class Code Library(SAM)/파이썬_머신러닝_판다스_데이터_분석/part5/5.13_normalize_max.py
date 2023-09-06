@@ -16,9 +16,15 @@ df['horsepower'].replace('?', np.nan, inplace=True)      # '?'을 np.nan으로 �
 df.dropna(subset=['horsepower'], axis=0, inplace=True)   # 누락데이터 행을 삭제
 df['horsepower'] = df['horsepower'].astype('float')      # 문자열을 실수형으로 변환
 
+#%%
+
+
 # horsepower 열의 통계 요약정보로 최대값(max)을 확인
 print(df.horsepower.describe())
 print('\n')
+
+
+#%%
 
 # horsepower 열의 최대값의 절대값으로 모든 데이터를 나눠서 저장
 df.horsepower = df.horsepower / abs(df.horsepower.max()) 
