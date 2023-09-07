@@ -15,19 +15,35 @@ print('\n')
 print(df.index)
 print('\n')
 
+#%%
 # 날짜 인덱스를 이용하여 데이터 선택하기
-df_y = df['2018']
+df_y = df['2018']  # 오타다 
 print(df_y.head())
 print('\n')
+
+#%%
+start = pd.to_datetime('2018-01-01') 
+end = pd.to_datetime('2019-01-01')
+
+ 
+
+
+
+
+#%%
+
 df_ym = df.loc['2018-07']    # loc 인덱서 활용
 print(df_ym)
 print('\n')
+
 df_ym_cols = df.loc['2018-07', 'Start':'High']    # 열 범위 슬라이싱
 print(df_ym_cols)
 print('\n')
+
 df_ymd = df['2018-07-02']
 print(df_ymd)
 print('\n')
+
 df_ymd_range = df['2018-06-25':'2018-06-20']    # 날짜 범위 지정
 print(df_ymd_range)
 print('\n')

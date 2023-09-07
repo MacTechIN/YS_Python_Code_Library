@@ -27,3 +27,6 @@ print('\n')
 # 원하는 열을 새로운 행 인덱스로 지정
 df.set_index('Date_m', inplace=True)
 print(df.head())
+
+
+new_date_dt = df['new_Date'].dt

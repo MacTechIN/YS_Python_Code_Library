@@ -34,3 +34,34 @@ print('\n')
 # 람다 함수 활용: 시리즈 객체에 적용
 sr3 = df['age'].apply(lambda x: add_10(x))  # x=df['age']
 print(sr3.head())
+
+#%%
+
+# seaborn 라이브러리 불러오기 
+
+import seaborn as sns
+
+# titanic 데이터셋에서 age, fare 2개 열을 선택하여 데이터프레임 만들기
+titanic = sns.load_dataset('titanic')
+df = titanic.loc[:, ['age','fare']]
+df['ten'] = 10
+print(df.head())
+print('\n')
+#사용자 정의 함수 
+def add_two(a, b):
+    #print(f"add_two({a})+({b})")
+    return a + b
+
+df['ageten'] = df[['age']].apply(add_two, b = (df['ten'].values))
+print(df['ageten'])
+
+
+#%%
+df['ageten'] = df.apply( lambda n : n['age'] + n['ten'], axis= 1)
+
+print(df['ageten'])
+
+#%%
+
+
+
